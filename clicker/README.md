@@ -1,4 +1,5 @@
-# clicker
+#UgandanKnuckles.js
+
 
 ## Project setup
 ```
