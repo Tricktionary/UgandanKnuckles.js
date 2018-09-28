@@ -13,10 +13,20 @@ Vue.use(VueRouter)
 const store = new Vuex.Store({
   state:{
     clicks:0,
+    numSoldier:0,
+    clicksPerSecond:0,
   },
   mutations:{
+    increaseNumberOfClicksPerSecond(state){
+      state.clicks+=state.clicksPerSecond;
+    },
     increaseNumberOfClicks(state){
       state.clicks++;
+    },
+    buySoldier(state){
+      state.clicks-=5;
+      state.numSoldier++;
+      state.clicksPerSecond+=1;
     }
   },
   actions:{
