@@ -12,11 +12,11 @@ Vue.use(VueRouter)
 /* Vuex Initialization*/
 const store = new Vuex.Store({
   state:{
-    numberOfClicks:0,
+    clicks:0,
   },
   mutations:{
     increaseNumberOfClicks(state){
-      state.numberOfClicks++;
+      state.clicks++;
     }
   },
   actions:{
