@@ -1,12 +1,16 @@
-<template>
-    <v-container>
-        <div class="text-xs-center login-box">
+<template class="comic">
+    <v-parallax
+        src="https://i.kym-cdn.com/photos/images/original/001/332/657/ed6.png"
+        dark
+        height="1000"
+    >
+        <div class="text-xs-center login-box comic">
             <h1>UgandanKnucles.js</h1>
             <h4>Number of clicks : {{clicks}}</h4>
             <h4>Clicks per second : {{clicksPerSecond}}</h4>
             <v-btn @click="increaseClicks()" large color="error" >Click</v-btn>
         </div>
-    </v-container>
+    </v-parallax>
 </template>
 <script>
 export default {
@@ -49,5 +53,8 @@ yourFunction();
         position: absolute;
         top:40%;
         left: 38%;
+    }
+    .comic{
+        font-family: "Comic Sans MS", "Comic Sans", cursive  !important;
     }
 </style>

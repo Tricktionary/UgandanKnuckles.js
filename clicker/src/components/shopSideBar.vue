@@ -8,64 +8,22 @@
                     <v-icon >add_circle_outline</v-icon>
                 </v-list-tile-action>
                 <v-list-tile-content>
-                    <v-list-tile-title>Buy Soldier : {{soldier}}</v-list-tile-title>
+                    <v-list-tile-title>Buy Soldier</v-list-tile-title>
+                    <v-list-tile-sub-title> # {{soldier}} | Price: {{this.$store.state.soldier.price}} | CPS: {{this.$store.state.soldier.cps}}</v-list-tile-sub-title>
+
                 </v-list-tile-content>
             </v-list-tile>
-        <!--
-            <v-list-tile to="/2">
+
+            <v-list-tile @click="buyBigBrother()">
                 <v-list-tile-action>
-                    <v-icon>add_circle_outline</v-icon>
+                    <v-icon >add_circle_outline</v-icon>
                 </v-list-tile-action>
                 <v-list-tile-content>
                     <v-list-tile-title>Buy Big Brother</v-list-tile-title>
+                    <v-list-tile-sub-title> # {{bigBrother}} | Price: {{this.$store.state.bigBrother.price}} | CPS: {{this.$store.state.bigBrother.cps}}</v-list-tile-sub-title>
                 </v-list-tile-content>
             </v-list-tile>
-
-            <v-list-tile to="/3">
-                <v-list-tile-action>
-                    <v-icon>add_circle_outline</v-icon>
-                </v-list-tile-action>
-                <v-list-tile-content>
-                    <v-list-tile-title>Buy Tank</v-list-tile-title>
-                </v-list-tile-content>
-            </v-list-tile>
-
-            <v-list-tile to="/4">
-                <v-list-tile-action>
-                    <v-icon>add_circle_outline</v-icon>
-                </v-list-tile-action>
-                <v-list-tile-content>
-                    <v-list-tile-title>Buy Prince</v-list-tile-title>
-                </v-list-tile-content>
-            </v-list-tile>
-
-            <v-list-tile to="/4">
-                <v-list-tile-action>
-                    <v-icon>add_circle_outline</v-icon>
-                </v-list-tile-action>
-                <v-list-tile-content>
-                    <v-list-tile-title>Buy Princess</v-list-tile-title>
-                </v-list-tile-content>
-            </v-list-tile>
-
-            <v-list-tile to="/4">
-                <v-list-tile-action>
-                    <v-icon>add_circle_outline</v-icon>
-                </v-list-tile-action>
-                <v-list-tile-content>
-                    <v-list-tile-title>Buy King</v-list-tile-title>
-                </v-list-tile-content>
-            </v-list-tile>
-
-            <v-list-tile to="/4">
-                <v-list-tile-action>
-                    <v-icon>add_circle_outline</v-icon>
-                </v-list-tile-action>
-                <v-list-tile-content>
-                    <v-list-tile-title>Buy Queen</v-list-tile-title>
-                </v-list-tile-content>
-            </v-list-tile>
-            -->
+         
             
         </v-list>
         
@@ -78,8 +36,13 @@ export default {
     name:"sideBar",
     methods:{
         buySoldier:function(){
-            if(this.$store.state.clicks >= 5){
+            if(this.$store.state.clicks >= this.$store.state.soldier.price){          
                 this.$store.commit("buySoldier")
+            }
+        },
+        buyBigBrother:function(){
+            if(this.$store.state.clicks >= this.$store.state.bigBrother.price){          
+                this.$store.commit("buyBigBrother")
             }
         }
     },
@@ -88,7 +51,10 @@ export default {
             return this.$store.state.clicks
         },
         soldier(){
-            return this.$store.state.numSoldier
+            return this.$store.state.soldier.amount
+        },
+        bigBrother(){
+            return this.$store.state.bigBrother.amount
         }
     }
 }
