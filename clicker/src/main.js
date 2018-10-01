@@ -17,12 +17,20 @@ const store = new Vuex.Store({
     soldier:{
       amount:0,
       price:5,
-      cps:1
+      cps:1,
+      priceIncrease:10,
     },
     bigBrother:{
       amount:0,
       price:10,
       cps:3,
+      priceIncrease:15,
+    },
+    tank:{
+      amount:0,
+      price:30,
+      cps:7,
+      priceIncrease:20,
     }
   },
   mutations:{
@@ -35,14 +43,20 @@ const store = new Vuex.Store({
     buySoldier(state){
       state.clicks-=state.soldier.price;
       state.soldier.amount++;
-      state.soldier.price+=1;
+      state.soldier.price+=state.soldier.priceIncrease;
       state.clicksPerSecond+=state.soldier.cps;
     },
     buyBigBrother(state){
       state.clicks-=state.bigBrother.price,
       state.bigBrother.amount++;
-      state.bigBrother.price+=3;
+      state.bigBrother.price+=state.bigBrother.priceIncrease;
       state.clicksPerSecond+=state.bigBrother.cps;
+    },
+    buyTank(state){
+      state.clicks-=state.tank.price,
+      state.tank.amount++;
+      state.tank.price+=state.tank.priceIncrease;
+      state.clicksPerSecond+=state.tank.cps;
     }
   },
   actions:{
