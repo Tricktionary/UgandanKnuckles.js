@@ -14,7 +14,7 @@ Vue.use(VueRouter)
 const store = new Vuex.Store({
   state:{
     clicks:0,
-    clicksPerSecond:100,
+    clicksPerSecond:0,
     soldier:{
       amount:0,
       price:5,
