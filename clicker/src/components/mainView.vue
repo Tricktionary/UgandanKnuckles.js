@@ -10,9 +10,13 @@
             <h4>Clicks per second : {{clicksPerSecond}}</h4>
             <v-btn @click="increaseClicks()" large color="error" >Click</v-btn>
         </div>
+        <img v-show="clicksPerSecond>20" class="gentleman" src="@/assets/images.jpg" width="150">
+        <img v-show="clicksPerSecond>40" class="russian" src="@/assets/russian.jpg" width="200">
+        <img v-show="clicksPerSecond>60" class="original" src="@/assets/original.png" width="400">
     </v-parallax>
 </template>
 <script>
+
 export default {
     name:'mainView',
     data(){
@@ -24,11 +28,12 @@ export default {
     },
     mounted(){
         this.incrementPerSecond();
+        AnimateRotate(360);
     },
     methods:{
         incrementPerSecond:function(){
             this.$store.commit("increaseNumberOfClicksPerSecond")
-            setTimeout(this.incrementPerSecond,2000)
+            setTimeout(this.incrementPerSecond,1000)
         }
     },
     computed:{
@@ -40,13 +45,31 @@ export default {
         }
     }
 }
-function yourFunction(){
-    // do whatever you like here
+ 
+ function AnimateRotate(angle) {
+    var $elem = $('.gentleman');
+    var russian = $('.russian');
+    var original = $('.original');
 
-    setTimeout(yourFunction, 5000);
+	$({deg: 0}).animate({deg: angle}, {
+		duration: 300,
+		step: function(now) {
+			$elem.css({
+				transform: 'rotate(' + now + 'deg)'
+            });
+            russian.css({
+				transform: 'rotate(' + now + 'deg)'
+            });
+            original.css({
+				transform: 'rotate(' + now + 'deg)'
+            });
+		},
+		complete: function(){
+			AnimateRotate(360);
+		}
+	},'linear');
 }
 
-yourFunction();
 </script>
 <style scoped>
     .login-box{
@@ -56,5 +79,20 @@ yourFunction();
     }
     .comic{
         font-family: "Comic Sans MS", "Comic Sans", cursive  !important;
+    }
+    .gentleman{
+        position:absolute;
+        top:25%;
+        left:10%;
+    }
+    .russian{
+        position:absolute;
+        top:10%;
+        left:70%;
+    }
+    .original{
+      position:absolute;
+        top:40%;
+        left:55%;  
     }
 </style>

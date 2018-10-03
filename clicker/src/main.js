@@ -4,6 +4,7 @@ import Vuex from 'vuex'
 import VueRouter from 'vue-router'
 import router from "./router/router"
 import App from './App.vue'
+ 
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
@@ -13,7 +14,7 @@ Vue.use(VueRouter)
 const store = new Vuex.Store({
   state:{
     clicks:0,
-    clicksPerSecond:0,
+    clicksPerSecond:100,
     soldier:{
       amount:0,
       price:5,

@@ -23,7 +23,17 @@
                     <v-list-tile-sub-title> # {{bigBrother}} | Price: {{this.$store.state.bigBrother.price}} | CPS: {{this.$store.state.bigBrother.cps}}</v-list-tile-sub-title>
                 </v-list-tile-content>
             </v-list-tile>
-         
+
+            <v-list-tile @click="buyTank()">
+                <v-list-tile-action>
+                    <v-icon >add_circle_outline</v-icon>
+                </v-list-tile-action>
+                <v-list-tile-content>
+                    <v-list-tile-title>Buy Tank</v-list-tile-title>
+                    <v-list-tile-sub-title> # {{tank}} | Price: {{this.$store.state.tank.price}} | CPS: {{this.$store.state.tank.cps}}</v-list-tile-sub-title>
+                </v-list-tile-content>
+            </v-list-tile>
+            
             
         </v-list>
         
@@ -46,6 +56,11 @@ export default {
             if(this.$store.state.clicks >= this.$store.state.bigBrother.price){          
                 this.$store.commit("buyBigBrother")
             }
+        },
+        buyTank:function(){
+            if(this.$store.state.clicks >= this.$store.state.tank.price){          
+                this.$store.commit("buyTank")
+            }
         }
     },
     computed:{
@@ -57,6 +72,9 @@ export default {
         },
         bigBrother(){
             return this.$store.state.bigBrother.amount
+        },
+        tank(){
+            return this.$store.state.tank.amount
         }
     }
 }
