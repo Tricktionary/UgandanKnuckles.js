@@ -34,6 +34,15 @@
                 </v-list-tile-content>
             </v-list-tile>
             
+            <v-list-tile @click="buyRussianKnuckles()">
+                <v-list-tile-action>
+                    <v-icon >add_circle_outline</v-icon>
+                </v-list-tile-action>
+                <v-list-tile-content>
+                    <v-list-tile-title>Buy Russian Knuckles</v-list-tile-title>
+                    <v-list-tile-sub-title> # {{russianKnuckles}} | Price: {{this.$store.state.russianKnuckles.price}} | CPS: {{this.$store.state.russianKnuckles.cps}}</v-list-tile-sub-title>
+                </v-list-tile-content>
+            </v-list-tile>
             
         </v-list>
         
@@ -61,6 +70,11 @@ export default {
             if(this.$store.state.clicks >= this.$store.state.tank.price){          
                 this.$store.commit("buyTank")
             }
+        },
+        buyRussianKnuckles:function(){
+            if(this.$store.state.clicks >= this.$store.state.tank.price){          
+                this.$store.commit("buyRussianKnuckles")
+            }
         }
     },
     computed:{
@@ -75,7 +89,11 @@ export default {
         },
         tank(){
             return this.$store.state.tank.amount
+        },
+        russianKnuckles(){
+            return this.$store.state.russianKnuckles.amount
         }
+
     }
 }
 </script>

@@ -32,6 +32,12 @@ const store = new Vuex.Store({
       price:30,
       cps:7,
       priceIncrease:20,
+    },
+    russianKnuckles:{
+      amount:0,
+      price:40,
+      cps:15,
+      priceIncrease:25,      
     }
   },
   mutations:{
@@ -58,6 +64,12 @@ const store = new Vuex.Store({
       state.tank.amount++;
       state.tank.price+=state.tank.priceIncrease;
       state.clicksPerSecond+=state.tank.cps;
+    },
+    buyRussianKnuckles(state){
+      state.clicks-=state.russianKnuckles.price,
+      state.russianKnuckles.amount++;
+      state.russianKnuckles.price+=state.russianKnuckles.priceIncrease;
+      state.clicksPerSecond+=state.russianKnuckles.cps;
     }
   },
   actions:{
