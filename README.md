@@ -9,7 +9,7 @@ From Using both technologies I prefer vue alot more than I do React. This applic
 [cookie-clicker](http://orteil.dashnet.org/cookieclicker/) with a spicy meme of the [ugandan knuckles](https://knowyourmeme.com/memes/ugandan-knuckles)
 
 ---
-### Road Map/TO-DO
+### Road Map
 
 * Add More Game Logic and more Ugandan Knuckles Classes
 * Make the UI more DANK
