@@ -72,7 +72,7 @@ export default {
             }
         },
         buyRussianKnuckles:function(){
-            if(this.$store.state.clicks >= this.$store.state.tank.price){          
+            if(this.$store.state.clicks >= this.$store.state.russianKnuckles.price){          
                 this.$store.commit("buyRussianKnuckles")
             }
         }
