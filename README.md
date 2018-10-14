@@ -1,4 +1,6 @@
 # UgandanKnuckles.js
+App Link: https://ugandan-knuckles.herokuapp.com/#/
+
 What is up, it's ye boi Andy coming at you with a spicy dead meme
 
 ---
@@ -16,7 +18,7 @@ From Using both technologies I prefer vue alot more than I do React. This applic
 * Have end game where you get the queen
 
 ---
-### To Run
+### To Run Locally
 
 - Install [vue-cli](https://cli.vuejs.org/)
 - Run the command `npm run serve` in the root directory
