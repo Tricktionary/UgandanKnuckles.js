@@ -1,5 +1,5 @@
 <template>
-    <v-navigation-drawer app clipped fixed>
+    <v-navigation-drawer app absolute temporary v-model="drawer" >
         <h2 class="mt-3 ml-3 grey--text"><v-icon>fas fa-shopping-cart</v-icon> Knuckles Shop</h2>
         <v-list dense>
 
@@ -55,6 +55,10 @@
 
 export default {
     name:"sideBar",
+    data(){
+        return{
+        }
+    },
     methods:{
         buySoldier:function(){
             if(this.$store.state.clicks >= this.$store.state.soldier.price){          
@@ -78,6 +82,9 @@ export default {
         }
     },
     computed:{
+        drawer(){
+            return this.$store.state.drawer
+        },
         clicks(){
             return this.$store.state.clicks
         },
@@ -93,7 +100,6 @@ export default {
         russianKnuckles(){
             return this.$store.state.russianKnuckles.amount
         }
-
     }
 }
 </script>

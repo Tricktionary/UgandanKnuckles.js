@@ -5,7 +5,7 @@
         height="1000"
     >
         <div class="text-xs-center login-box comic">
-            <h1>UgandanKnucles.js</h1>
+            <h1>UgandanKnucles.js </h1>
             <h4>Number of clicks : {{clicks}}</h4>
             <h4>Clicks per second : {{clicksPerSecond}}</h4>
             <v-btn @click="increaseClicks()" large color="error" >Click</v-btn>
@@ -37,6 +37,9 @@ export default {
         }
     },
     computed:{
+        drawer(){
+            return this.$store.state.drawer
+        },
         clicks(){
             return this.$store.state.clicks
         },

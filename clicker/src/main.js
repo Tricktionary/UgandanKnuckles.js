@@ -13,6 +13,7 @@ Vue.use(VueRouter)
 /* Vuex Initialization*/
 const store = new Vuex.Store({
   state:{
+    drawer:null,
     clicks:0,
     clicksPerSecond:0,
     soldier:{
@@ -41,6 +42,9 @@ const store = new Vuex.Store({
     }
   },
   mutations:{
+    toggleDrawer(state){
+      state.drawer = !state.drawer;
+    },
     increaseNumberOfClicksPerSecond(state){
       state.clicks+=state.clicksPerSecond;
     },
