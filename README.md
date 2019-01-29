@@ -20,5 +20,6 @@ From Using both technologies I prefer vue alot more than I do React. This applic
 ---
 ### To Run Locally
 
-- Install [vue-cli](https://cli.vuejs.org/)
-- Run the command `npm run serve` in the root directory
+- Make sure you have Node installed
+- Run `npm install`
+- Run the command `npm run serve` 
